@@ -1,5 +1,22 @@
 import type { Interface } from "node:readline";
 import type { PokeAPI } from "./pokeapi";
+import {
+  Ability,
+  Cries,
+  EncounterMethodRate,
+  Form,
+  HeldItem,
+  Index,
+  Mfe,
+  Name,
+  PastAbility,
+  PastType,
+  PokemonEncounter,
+  Species,
+  Sprites,
+  Stat,
+  Type,
+} from "./helperTypes";
 
 export type CLICommand = {
   name: string;
@@ -11,6 +28,7 @@ export type State = {
   commands: Record<string, CLICommand>;
   rl: Interface;
   api: PokeAPI;
+  pokedex: Map<string, PokemonType>;
 };
 
 export type ShallowLocations = string[];
@@ -37,71 +55,25 @@ export type Result = {
   pokemon_encounters: PokemonEncounter[];
 };
 
-type Location = {
+export type PokemonType = {
+  id: number;
   name: string;
-  url: string;
-};
-
-type EncounterMethodRate = {
-  encounter_method: EncounterMethod;
-  version_details: VersionDetail[];
-};
-
-type EncounterMethod = {
-  name: string;
-  url: string;
-};
-
-type VersionDetail = {
-  rate: number;
-  version: Version;
-};
-
-type Version = {
-  name: string;
-  url: string;
-};
-
-type Name = {
-  name: string;
-  language: Language;
-};
-
-type Language = {
-  name: string;
-  url: string;
-};
-
-type PokemonEncounter = {
-  pokemon: Pokemon;
-  version_details: VersionDetail2[];
-};
-
-type Pokemon = {
-  name: string;
-  url: string;
-};
-
-type VersionDetail2 = {
-  version: Version2;
-  max_chance: number;
-  encounter_details: EncounterDetail[];
-};
-
-type Version2 = {
-  name: string;
-  url: string;
-};
-
-type EncounterDetail = {
-  min_level: number;
-  max_level: number;
-  condition_values: any[];
-  chance: number;
-  method: Method;
-};
-
-type Method = {
-  name: string;
-  url: string;
+  base_experience: number;
+  height: number;
+  is_default: boolean;
+  order: number;
+  weight: number;
+  abilities: Ability[];
+  forms: Form[];
+  game_indices: Index[];
+  held_items: HeldItem[];
+  location_area_encounters: string;
+  moves: Mfe[];
+  species: Species;
+  sprites: Sprites;
+  cries: Cries;
+  stats: Stat[];
+  types: Type[];
+  past_types: PastType[];
+  past_abilities: PastAbility[];
 };
