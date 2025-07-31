@@ -1,42 +1,106 @@
-## This is a simmple repl app written in JS/Node.
+# 🧢 Pokédex CLI App
 
-This project originally uses pnpm as package manager but you can use npm, yarn or any other tool taht you like.
+It's a Boot.dev project.
 
-To start te project in the app directory run:
+A simple interactive Pokédex application written in **JavaScript (Node.js)**.  
+Explore the Pokémon world, catch your favorites, and build your own Pokédex — all from the terminal!
 
+---
+
+## 🚀 Getting Started
+
+This project uses **pnpm** by default, but you're free to use `npm`, `yarn`, or any other Node-compatible package manager.
+
+### 📦 Install dependencies
+
+```bash
+pnpm install
+# or
+npm install
+# or
+yarn install
 ```
-npm run start
 
-or
+### 📦 Install dependencies
 
-yarn start
-
-or
-
+```bash
 pnpm start
+# or
+npm run start
+# or
+yarn start
 ```
 
-Available commands:
-`catch [pokemon_name]` (ex. catch pikachu):
-Takes the name of a pokemon as an argument and tries to catch it. If succeed - adds it to the pokedex.
+## 🕹 Available Commands
 
-`explore [location_name]` (ex. explore canalave-city-area):
-Takes the name of a location area as an argument and lists pokemons that can be found in that area.
+`catch [pokemon_name]`:
 
-`help`:
-Displays help screen.
+```bash
+catch pikachu
+```
 
-`inspect` (ex. inspect pikachu):
+Attempts to catch a Pokémon by name (e.g. catch pikachu).
+If successful, the Pokémon is added to your Pokédex.
+
+`explore [location_area]`:
+
+```bash
+explore canalave-city-area
+```
+
+Explores a location area and lists the Pokémon that can be found there.
+
+`inspect [pokemon_name]`:
+
+```bash
+inspect pikachu
+```
+
 It takes the name of a Pokemon and prints the name, height, weight, stats and type(s) of the Pokemon.
 
 `map`:
-Displays the names of 20 location areas in the Pokemon world. Each subsequent call to map will display next 20 locations.
+
+```bash
+map
+```
+
+Lists 20 Pokémon location areas from the Pokémon world.
+Each subsequent call displays the next 20.
 
 `mapb`:
-Displays the names of 20 location areas in the Pokemon world. Each subsequent call to mapb will display previous 20 locations.
+
+```bash
+mapb
+```
+
+Lists 20 Pokémon location areas from the Pokémon world.
+Each subsequent call displays the previous 20.
 
 `pokedex`:
-Prints a list of all the names of the Pokemon the user has caught.
+
+```bash
+pokedex
+```
+
+Prints a list of all Pokémon you’ve caught.
+
+`help`:
+
+```bash
+help
+```
+
+Displays the help screen with available commands.
 
 `exit`:
-Exits the Pokedex.
+
+```bash
+exit
+```
+
+Closes the application.
+
+## 📎 Notes
+
+- Make sure you have an active internet connection — the app fetches data from the [PokéAPI](https://pokeapi.co/).
+- Names passed to commands should match the API format (e.g. canalave-city-area, not Canalave City).
