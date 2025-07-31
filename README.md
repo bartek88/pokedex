@@ -5,15 +5,15 @@ This project originally uses pnpm as package manager but you can use npm, yarn o
 To start te project in the app directory run:
 
 ```
-npm run dev
+npm run start
 
 or
 
-yarn dev
+yarn start
 
 or
 
-pnpm dev
+pnpm start
 ```
 
 Available commands:
